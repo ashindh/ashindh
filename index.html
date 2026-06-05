@@ -3,1232 +3,719 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 41. Meta Description -->
-    <meta name="description" content="Portfolio of Ashindh Anil, a Data Analyst specializing in Python, SQL, Power BI, and Machine Learning. Exploring the intersection of Finance and Data Science.">
-    <!-- 46. Canonical URL -->
-    <link rel="canonical" href="https://ashindhanil.com">
+    <meta name="description" content="Portfolio of Ashindh Anil, a Business Analyst bridging Finance and Business Analytics.">
+    <title>Ashindh Anil | Business Analyst</title>
     
-    <!-- 42. Open Graph (OG) Tags -->
-    <meta property="og:title" content="Ashindh Anil | Data Analyst & Business Analytics Specialist">
-    <meta property="og:description" content="Portfolio of Ashindh Anil. Skilled in Python, SQL, Power BI, Tableau, and Machine Learning. Bridging financial domain knowledge with data-driven insights.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ashindhanil.com">
-    <meta property="og:image" content="https://ashindhanil.com/og-image.jpg"> <!-- Replace with actual URL -->
-
-    <!-- 13. Favicon (SVG for dark mode compatibility) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
-
-    <title>Ashindh Anil | Data Analyst</title>
+    <!-- Premium Editorial Fonts: Playfair Display for headers, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- 47. JSON-LD Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ashindh Anil",
-      "jobTitle": "Data Analyst | Business Analytics Specialist",
-      "url": "https://ashindhanil.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/ashindhanil/",
-        "https://github.com/ashindh"
-      ],
-      "knowsAbout": ["Python", "SQL", "Power BI", "Tableau", "Machine Learning", "Business Analysis", "Agile", "Financial Accounting"]
-    }
-    </script>
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
-                        'apple-dark': '#101010',
-                        'apple-gray': '#1d1d1f',
-                        'apple-light-gray': '#f5f5f7',
-                        'apple-text-gray': '#86868b',
-                        'apple-blue': '#2997ff',
-                        'apple-card': 'rgba(30, 30, 30, 0.6)',
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'fade-in': 'fadeIn 1s ease-out forwards',
-                        'float': 'float 6s ease-in-out infinite',
-                        'scale-in': 'scaleIn 0.2s ease-out forwards',
-                        'pulse-glow': 'pulseGlow 2s infinite',
-                        'gradient-x': 'gradientX 8s ease infinite',
-                        'dash': 'dash 1.5s ease-out forwards',
-                    },
-                    backgroundSize: {
-                        '300%': '300%',
+                        stone: {
+                            50: '#fcfcfc',
+                            100: '#f5f5f4',
+                            900: '#1c1917',
+                        },
+                        accent: '#ff4d00', // Electric Orange
                     },
                     keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        pageEnter: {
+                            '0%': { opacity: '0', transform: 'translateY(15px)', filter: 'blur(4px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0)' },
+                        },
+                        reveal: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
                         },
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        scaleIn: {
-                            '0%': { transform: 'scale(0.9)' },
-                            '100%': { transform: 'scale(1)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 5px rgba(41, 151, 255, 0.5)' },
-                            '50%': { boxShadow: '0 0 20px rgba(41, 151, 255, 0.8)' },
-                        },
-                        gradientX: {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        },
-                        dash: {
-                            '0%': { strokeDasharray: '0, 100' },
-                            '100%': { strokeDasharray: 'var(--percent), 100' },
                         }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'page-enter': 'pageEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                        'fade-in': 'fadeIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards',
                     }
                 }
             }
         }
     </script>
+    
     <style>
+        /* Base Styling */
         body {
-            background-color: #101010; /* Matte Black */
-            color: #f5f5f7;
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
             overflow-x: hidden;
-            position: relative;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        /* 1. Noise/Grain Texture */
-        body::before {
-            content: "";
+        /* Grid Background Pattern */
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(28, 25, 23, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(28, 25, 23, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
+            z-index: -1;
             pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-            z-index: 50; /* Above regular content but below modals/dock */
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #101010;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+        /* Architectural Borders */
+        .brutal-border { border: 1px solid #1c1917; }
+        .brutal-border-b { border-bottom: 1px solid #1c1917; }
+        .brutal-border-r { border-right: 1px solid #1c1917; }
+        .brutal-border-t { border-top: 1px solid #1c1917; }
+        
+        /* Hide Scrollbar but keep functionality */
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Typography Highlights */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #1c1917;
         }
 
-        /* 7. Glassmorphism Refinement - Ultra Transparent */
-        .glass-panel {
-            background: rgba(0, 0, 0, 0.2); /* Dark faint tint */
-            backdrop-filter: blur(2px); 
-            -webkit-backdrop-filter: blur(2px);
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
+        /* Robust Reveal Animation System */
+        .reveal-mask {
+            overflow: hidden;
+            display: block;
+        }
+        
+        /* Child is hidden initially, revealed by parent's active state */
+        .reveal-child {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        
+        .active-page .reveal-child {
+            animation: fadeUpReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        /* Modern Bottom Dock Styles - Enhanced Animation */
-        .dock-container {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px); /* Start hidden below */
-            z-index: 100;
-            background: rgba(20, 20, 20, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 9999px;
-            padding: 1rem 2rem; 
+        @keyframes fadeUpReveal {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Layout Adjustments */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr; /* Fixed Sidebar Width */
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Sidebar Entrance Animation */
+        .sidebar-wrapper {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: pageEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.2s;
+        }
+
+        /* Prevent CSS Grid blowout on the main content area */
+        .content-area {
+            min-width: 0; 
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Smooth scrolling inside content area */
+        }
+
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+            }
+            .content-area {
+                height: auto;
+                flex: 1;
+            }
+        }
+
+        /* Marquee wrapper */
+        .marquee-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
             display: flex;
-            gap: 1.5rem;
-            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
-            /* Slide up animation on load */
-            animation: dockSlideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.5s; 
-            transition: box-shadow 0.3s ease, border-color 0.3s ease;
-            max-width: 95vw;
         }
 
-        /* Removed hover glow effect */
+        /* Interactive Project Item */
+        .project-row { transition: background-color 0.3s ease, color 0.3s ease; }
+        .project-row:hover { background-color: #1c1917; color: #f5f5f4; }
+        .project-row:hover .project-arrow { transform: translateX(10px) rotate(-45deg); }
+        .project-arrow { transition: transform 0.3s ease; }
 
-        @media (min-width: 640px) {
-            .dock-container { gap: 2rem; padding: 0.75rem 1.5rem; }
+        /* SPA Page Logic with Smooth Animations */
+        .page-view {
+            display: none;
+        }
+        
+        .page-view.active-page {
+            display: block;
+            animation: pageEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        .dock-item {
+        /* Active Nav Link */
+        .nav-btn {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #86868b;
-            /* Springy bounce effect on transitions */
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            cursor: pointer;
-            width: 3rem; 
-            height: 3rem;
-            border-radius: 50%;
+            transition: color 0.3s ease, transform 0.2s ease;
         }
-
-        .dock-item:hover {
-            color: white;
-            /* Bouncier lift */
-            transform: translateY(-8px) scale(1.15); 
-            background: rgba(255,255,255,0.1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        .nav-btn:hover {
+            transform: translateX(5px);
         }
-
-        .dock-item:active {
-            /* Jelly click effect */
-            transform: scale(0.9) translateY(0);
-            transition: all 0.1s ease;
+        .nav-btn.active-nav {
+            color: #ff4d00;
+            font-weight: 600;
+            transform: translateX(0);
         }
-
-        .dock-item.active {
-            color: #2997ff;
-            background: rgba(41, 151, 255, 0.15);
-            transform: translateY(-2px); /* Slight lift for active state */
-        }
-
-        /* 20. Active Dock Indicators - Pulsing */
-        .dock-item::after {
+        .nav-btn.active-nav::before {
             content: '';
             position: absolute;
-            bottom: -5px; /* Position below the item */
-            width: 4px;
-            height: 4px;
-            background-color: #2997ff;
+            left: -1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: #ff4d00;
             border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            box-shadow: 0 0 5px #2997ff;
-        }
-
-        .dock-item.active::after {
-            opacity: 1;
-            /* Pulse animation for the dot */
-            animation: pulseDot 2s infinite; 
-        }
-
-        @keyframes pulseDot {
-            0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(41, 151, 255, 0.7); }
-            70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 4px rgba(41, 151, 255, 0); }
-            100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(41, 151, 255, 0); }
-        }
-
-        @keyframes dockSlideUp {
-            0% { transform: translateX(-50%) translateY(100px); opacity: 0; }
-            100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-        }
-
-        /* Tooltip style - Smoother fade */
-        .dock-tooltip {
-            position: absolute;
-            top: -45px;
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            opacity: 0;
-            transform: translateY(10px) scale(0.9);
-            transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            pointer-events: none;
-            white-space: nowrap;
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-        }
-        
-        .dock-item:hover .dock-tooltip {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            top: -55px; /* Adjust for higher bounce */
-        }
-
-        /* Text Gradients */
-        .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, #86868b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* View Transition Logic */
-        .view-section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            padding-bottom: 120px;
-        }
-        .view-section.active {
-            display: block;
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        /* 12. Gradient Borders - Removed Mouse Glow (::before) */
-        .bento-card {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid transparent; 
-            background-clip: padding-box;
-        }
-        
-        /* Gradient Border Logic */
-        .bento-card::after {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            border-radius: 1.5rem; /* Match rounded-3xl */
-            padding: 1px; /* Border width */
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            z-index: 11;
-        }
-
-        .bento-card:hover {
-            transform: scale(1.02);
-            border-color: rgba(255,255,255,0.2); /* Fallback */
-        }
-        
-        /* Timeline Styles */
-        .timeline-item:last-child {
-            border-left: 2px solid transparent;
-        }
-
-        /* 6. Interactive Particles Canvas - Fixed to background */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0; /* Behind content */
-            pointer-events: none; /* Let clicks pass through, but we track mouse via JS */
-            opacity: 0.7;
-        }
-        
-        /* Toast Notification for Email Copy */
-        #toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 50px;
-            padding: 16px;
-            position: fixed;
-            z-index: 200;
-            left: 50%;
-            bottom: 120px;
-            transform: translateX(-50%);
-            font-size: 17px;
-            opacity: 0;
-            transition: opacity 0.5s, bottom 0.5s;
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
-            bottom: 130px;
-        }
-
-        /* === 6. Modal Styles === */
-        #project-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 1000; /* Above everything */
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        #project-modal.open {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background: #1c1c1e;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 2rem;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-
-        #project-modal.open .modal-content {
-            transform: scale(1);
-        }
-
-        /* Circular Progress Bar Styles */
-        .circular-chart {
-            display: block;
-            margin: 0 auto;
-            max-width: 80%;
-            max-height: 250px;
-        }
-        .circle-bg {
-            fill: none;
-            stroke: rgba(255,255,255,0.1);
-            stroke-width: 2.5;
-        }
-        .circle {
-            fill: none;
-            stroke-width: 2.5;
-            stroke-linecap: round;
-            animation: dash 1.5s ease-out forwards;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-apple-blue selection:text-white">
 
-    <!-- Global Particle Background -->
-    <canvas id="particles-canvas"></canvas>
+<body class="antialiased selection:bg-accent selection:text-white">
 
-    <!-- Toast Notification -->
-    <div id="toast"><i class="fas fa-check-circle text-green-500 mr-2"></i>Email copied to clipboard!</div>
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
 
-    <!-- 6. Project Details Modal -->
-    <div id="project-modal" onclick="closeModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <!-- Increased z-index and ensured distinct positioning -->
-            <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white transition-colors z-50 p-2">
-                <i class="fas fa-times text-xl"></i>
-            </button>
+    <div class="main-layout">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="brutal-border-r bg-stone-100 flex-col justify-between hidden lg:flex p-8 z-50 h-screen sticky top-0 relative sidebar-wrapper">
+            <div>
+                <button onclick="switchPage('home')" class="block text-2xl font-serif font-bold tracking-tighter mb-1 text-left hover:text-accent transition-colors">Ashindh Anil.</button>
+                <p class="text-xs text-stone-500 font-mono uppercase tracking-widest">Business Analyst</p>
+            </div>
             
-            <!-- Modal Header -->
-            <div class="mb-6">
-                <!-- Added pr-12 to prevent date overlapping with the close button -->
-                <div class="flex justify-between items-start mb-2 pr-12">
-                    <span id="modal-tag" class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs font-medium uppercase tracking-wider border border-blue-500/20">Data Analysis</span>
-                    <span id="modal-date" class="text-xs text-gray-500 font-mono mt-1"></span>
-                </div>
-                <h2 id="modal-title" class="text-3xl font-bold text-white leading-tight">Project Title</h2>
-            </div>
+            <nav class="flex flex-col gap-6 items-start">
+                <button onclick="switchPage('home')" class="nav-btn text-lg font-medium hover:text-accent text-left w-full active-nav" id="nav-home">Index</button>
+                <button onclick="switchPage('about')" class="nav-btn text-lg font-medium hover:text-accent text-left w-full" id="nav-about">Profile</button>
+                <button onclick="switchPage('projects')" class="nav-btn text-lg font-medium hover:text-accent text-left w-full" id="nav-projects">Selected Works</button>
+                <button onclick="switchPage('experience')" class="nav-btn text-lg font-medium hover:text-accent text-left w-full" id="nav-experience">Curriculum Vitae</button>
+            </nav>
 
-            <!-- Key Metrics Grid (New) -->
-            <div id="modal-metrics" class="grid grid-cols-3 gap-4 mb-6">
-                <!-- Metrics injected via JS -->
+            <div>
+                <button onclick="switchPage('contact')" class="inline-block brutal-border px-6 py-3 font-medium hover:bg-stone-900 hover:text-stone-100 transition-colors w-full text-center" id="nav-contact-btn">Get in touch</button>
             </div>
+        </aside>
 
-            <!-- Description -->
-            <div class="mb-6">
-                <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Overview</h4>
-                <div id="modal-description" class="text-gray-300 leading-relaxed text-sm"></div>
-            </div>
+        <!-- Mobile Header -->
+        <header class="lg:hidden flex justify-between items-center p-6 brutal-border-b bg-stone-100 sticky top-0 z-50 animate-fade-in">
+            <button onclick="switchPage('home')" class="text-xl font-serif font-bold tracking-tighter">Ashindh Anil.</button>
+            
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-stone-900 focus:outline-none hover:text-accent transition-colors">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </header>
 
-            <!-- Tech Stack & Link -->
-            <div class="border-t border-white/10 pt-6">
-                <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Technologies</h4>
-                <div class="flex justify-between items-end">
-                    <div id="modal-stack" class="flex gap-2 flex-wrap max-w-[70%]">
-                        <!-- Pills injected via JS -->
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 top-[73px] bg-stone-100 z-40 brutal-border-b flex flex-col p-6 animate-page-enter">
+            <nav class="flex flex-col gap-6 items-start">
+                <button onclick="switchPage('home'); closeMobileMenu();" class="text-2xl font-serif hover:text-accent text-left w-full transition-colors">Index</button>
+                <button onclick="switchPage('about'); closeMobileMenu();" class="text-2xl font-serif hover:text-accent text-left w-full transition-colors">Profile</button>
+                <button onclick="switchPage('projects'); closeMobileMenu();" class="text-2xl font-serif hover:text-accent text-left w-full transition-colors">Selected Works</button>
+                <button onclick="switchPage('experience'); closeMobileMenu();" class="text-2xl font-serif hover:text-accent text-left w-full transition-colors">Curriculum Vitae</button>
+                <button onclick="switchPage('contact'); closeMobileMenu();" class="text-2xl font-serif hover:text-accent text-left w-full transition-colors">Contact</button>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="content-area w-full relative">
+            
+            <!-- ================= PAGE: HOME ================= -->
+            <div id="home" class="page-view active-page">
+                <section class="min-h-[85vh] flex flex-col justify-center px-6 lg:px-16 py-12">
+                    <div class="mb-6 reveal-mask">
+                        <div class="reveal-child" style="animation-delay: 0.1s;">
+                            <span class="inline-block px-3 py-1 text-xs font-mono border border-stone-900 text-stone-900 uppercase tracking-widest bg-stone-100 relative z-10 before:absolute before:-top-[3px] before:-left-[3px] before:w-full before:h-full before:bg-accent before:-z-10 before:border before:border-stone-900 transition-transform hover:-translate-y-1 hover:translate-x-1 duration-200 cursor-pointer">
+                                Available for Roles
+                            </span>
+                        </div>
                     </div>
-                    <a id="modal-link" href="#" target="_blank" class="px-6 py-2 bg-white text-black rounded-full font-medium hover:bg-gray-200 transition-colors flex items-center shrink-0">
-                        GitHub <i class="fab fa-github ml-2"></i>
-                    </a>
-                </div>
+
+                    <h1 class="text-5xl md:text-7xl lg:text-[7.5rem] font-serif leading-[0.9] tracking-tighter text-stone-900 mb-8 uppercase max-w-full break-words flex flex-col">
+                        <div class="reveal-mask"><div class="reveal-child" style="animation-delay: 0.2s;">Turning</div></div>
+                        <div class="reveal-mask"><div class="reveal-child text-outline" style="animation-delay: 0.3s;">Raw Data</div></div>
+                        <div class="reveal-mask"><div class="reveal-child" style="animation-delay: 0.4s;">Into Value.</div></div>
+                    </h1>
+
+                    <div class="max-w-2xl mt-4">
+                        <div class="reveal-mask">
+                            <!-- TEXT UPDATE: Changed Data Science to Business Analytics -->
+                            <p class="text-lg md:text-xl text-stone-600 font-light leading-relaxed reveal-child" style="animation-delay: 0.5s;">
+                                A highly motivated graduate bridging <strong class="font-semibold text-stone-900">Financial Domain Knowledge</strong> with <strong class="font-semibold text-stone-900">Business Analytics</strong>. Equipped with fresh, hands-on training in Python, SQL, and Power BI to transform raw datasets into actionable business insights. Eager to bring value and learn within a dynamic data team.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 flex gap-4 reveal-mask">
+                        <div class="reveal-child flex gap-4" style="animation-delay: 0.6s;">
+                            <button onclick="switchPage('about')" class="inline-flex items-center justify-center px-8 py-3 bg-stone-900 text-white font-medium hover:bg-stone-800 transition-colors">
+                                Read Profile
+                            </button>
+                            <button onclick="switchPage('projects')" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-stone-900 hover:bg-stone-900 hover:text-white transition-all duration-300">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="p-6 flex flex-col sm:flex-row justify-between items-center bg-stone-100 font-mono text-xs text-stone-500 uppercase tracking-widest mt-auto">
+                    <p>&copy; 2026 Ashindh Anil.</p>
+                </footer>
             </div>
 
-            <!-- Added Instruction Text -->
-            <div class="mt-6 text-center border-t border-white/5 pt-4">
-                <p class="text-[10px] text-gray-600 uppercase tracking-widest">Click anywhere outside popup to close</p>
+            <!-- ================= PAGE: ABOUT ================= -->
+            <div id="about" class="page-view">
+                <section class="px-6 lg:px-16 py-12 lg:py-24 min-h-screen flex flex-col justify-center">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16">
+                        
+                        <div class="md:col-span-12 lg:col-span-4">
+                            <div class="reveal-mask block"><h2 class="text-xs font-mono uppercase tracking-widest text-stone-500 mb-4 reveal-child" style="animation-delay: 0.1s;">(01) Profile</h2></div>
+                            <div class="reveal-mask block"><h3 class="text-5xl font-serif font-bold text-stone-900 leading-none reveal-child" style="animation-delay: 0.2s;">The<br>Analyst.</h3></div>
+                        </div>
+                        
+                        <div class="md:col-span-12 lg:col-span-8">
+                            <div class="reveal-mask block">
+                                <p class="text-xl md:text-2xl font-light text-stone-800 leading-relaxed mb-12 reveal-child" style="animation-delay: 0.3s;">
+                                    I am a highly motivated Data Analyst fresher with a background in Commerce (B.Com). I specialize in finding the narrative hidden within numbers, ensuring business decisions are backed by statistical rigor rather than intuition. Eager to bring value and learn within a dynamic data team.
+                                </p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 pt-8 border-t border-stone-300">
+                                <div class="reveal-mask block">
+                                    <div class="reveal-child" style="animation-delay: 0.4s;">
+                                        <h4 class="text-2xl font-bold mb-6 font-serif text-stone-900">Technical Toolkit</h4>
+                                        <ul class="space-y-0">
+                                            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-stone-300 py-4 gap-2 group hover:border-stone-900 transition-colors duration-300">
+                                                <span class="font-mono text-xs uppercase tracking-widest text-stone-500 group-hover:text-stone-900 transition-colors">Programming</span> 
+                                                <span class="font-sans text-base sm:text-lg font-medium text-stone-900 text-left sm:text-right">Python, SQL, R, HTML</span>
+                                            </li>
+                                            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-stone-300 py-4 gap-2 group hover:border-stone-900 transition-colors duration-300">
+                                                <span class="font-mono text-xs uppercase tracking-widest text-stone-500 group-hover:text-stone-900 transition-colors">Visualization</span> 
+                                                <span class="font-sans text-base sm:text-lg font-medium text-stone-900 text-left sm:text-right">Power BI, Tableau</span>
+                                            </li>
+                                            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-stone-300 py-4 gap-2 group hover:border-stone-900 transition-colors duration-300">
+                                                <span class="font-mono text-xs uppercase tracking-widest text-stone-500 group-hover:text-stone-900 transition-colors">Libraries</span> 
+                                                <span class="font-sans text-base sm:text-lg font-medium text-stone-900 text-left sm:text-right">Pandas, Scikit-Learn</span>
+                                            </li>
+                                            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-stone-300 py-4 gap-2 group hover:border-stone-900 transition-colors duration-300">
+                                                <span class="font-mono text-xs uppercase tracking-widest text-stone-500 group-hover:text-stone-900 transition-colors">Cloud & Tools</span> 
+                                                <span class="font-sans text-base sm:text-lg font-medium text-stone-900 text-left sm:text-right">AWS (Glue), Excel, SPSS</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reveal-mask block">
+                                    <div class="reveal-child" style="animation-delay: 0.5s;">
+                                        <h4 class="text-2xl font-bold mb-6 font-serif text-stone-900">Domain Expertise</h4>
+                                        <ul class="space-y-0">
+                                            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-stone-300 py-4 gap-2 group hover:border-stone-900 transition-colors duration-300">
+                                                <span class="font-mono text-xs uppercase tracking-widest text-stone-500 group-hover:text-stone-900 transition-colors">Methodology</span> 
+                                                <span class="font-sans text-base sm:text-lg font-medium text-stone-900 text-left sm:text-right">Agile, SRS</span>
+                                            </li>
+                                            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-stone-300 py-4 gap-2 group hover:border-stone-900 transition-colors duration-300">
+                                                <span class="font-mono text-xs uppercase tracking-widest text-stone-500 group-hover:text-stone-900 transition-colors">Analysis</span> 
+                                                <span class="font-sans text-base sm:text-lg font-medium text-stone-900 text-left sm:text-right">Predictive Modeling</span>
+                                            </li>
+                                            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-stone-300 py-4 gap-2 group hover:border-stone-900 transition-colors duration-300">
+                                                <span class="font-mono text-xs uppercase tracking-widest text-stone-500 group-hover:text-stone-900 transition-colors">Finance</span> 
+                                                <span class="font-sans text-base sm:text-lg font-medium text-stone-900 text-left sm:text-right">Accounting, Tally</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class="p-6 brutal-border-t flex flex-col sm:flex-row justify-between items-center bg-stone-100 font-mono text-xs text-stone-500 uppercase tracking-widest">
+                    <p>&copy; 2026 Ashindh Anil.</p>
+                </footer>
+            </div>
+
+            <!-- ================= PAGE: PROJECTS ================= -->
+            <div id="projects" class="page-view">
+                <section class="min-h-screen flex flex-col">
+                    <div class="px-6 lg:px-16 py-12 lg:py-16">
+                        <div class="reveal-mask block"><h2 class="text-xs font-mono uppercase tracking-widest text-stone-500 mb-4 reveal-child" style="animation-delay: 0.1s;">(02) Selected Works</h2></div>
+                        <div class="reveal-mask block"><h3 class="text-5xl md:text-6xl font-serif font-bold text-stone-900 reveal-child" style="animation-delay: 0.2s;">Practical Application.</h3></div>
+                    </div>
+
+                    <div class="flex flex-col border-t border-stone-900 flex-1">
+                        
+                        <!-- Project 1 -->
+                        <div class="project-row group border-b border-stone-900 cursor-pointer reveal-mask block w-full" onclick="openProject('grocery')">
+                            <div class="px-6 lg:px-16 py-8 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-4 items-center reveal-child w-full" style="animation-delay: 0.3s;">
+                                <div class="md:col-span-3">
+                                    <span class="font-mono text-sm opacity-60">Feb 2026</span>
+                                </div>
+                                <div class="md:col-span-6">
+                                    <h4 class="text-2xl md:text-4xl font-serif font-bold mb-2">Grocery E-Commerce Digital Transformation</h4>
+                                    <p class="font-mono text-xs opacity-80 uppercase tracking-widest">Business Analysis / Flowcharts</p>
+                                </div>
+                                <div class="md:col-span-3 text-left md:text-right mt-2 md:mt-0">
+                                    <i class="fas fa-arrow-right text-2xl project-arrow text-stone-400 group-hover:text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-row group border-b border-stone-900 cursor-pointer reveal-mask block w-full" onclick="openProject('spotify')">
+                            <div class="px-6 lg:px-16 py-8 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-4 items-center reveal-child w-full" style="animation-delay: 0.4s;">
+                                <div class="md:col-span-3">
+                                    <span class="font-mono text-sm opacity-60">Feb 2026</span>
+                                </div>
+                                <div class="md:col-span-6">
+                                    <h4 class="text-2xl md:text-4xl font-serif font-bold mb-2">Spotify User Retention Analysis</h4>
+                                    <p class="font-mono text-xs opacity-80 uppercase tracking-widest">Power BI / Data Visualization</p>
+                                </div>
+                                <div class="md:col-span-3 text-left md:text-right mt-2 md:mt-0">
+                                    <i class="fas fa-arrow-right text-2xl project-arrow text-stone-400 group-hover:text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-row group border-b border-stone-900 cursor-pointer reveal-mask block w-full" onclick="openProject('lung')">
+                            <div class="px-6 lg:px-16 py-8 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-4 items-center reveal-child w-full" style="animation-delay: 0.5s;">
+                                <div class="md:col-span-3">
+                                    <span class="font-mono text-sm opacity-60">Feb 2026</span>
+                                </div>
+                                <div class="md:col-span-6">
+                                    <h4 class="text-2xl md:text-4xl font-serif font-bold mb-2">Lung Cancer Prediction System</h4>
+                                    <p class="font-mono text-xs opacity-80 uppercase tracking-widest">Machine Learning / Python</p>
+                                </div>
+                                <div class="md:col-span-3 text-left md:text-right mt-2 md:mt-0">
+                                    <i class="fas fa-arrow-right text-2xl project-arrow text-stone-400 group-hover:text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="p-6 flex flex-col sm:flex-row justify-between items-center bg-stone-100 font-mono text-xs text-stone-500 uppercase tracking-widest mt-auto">
+                        <p>&copy; 2026 Ashindh Anil.</p>
+                    </footer>
+                </section>
+            </div>
+
+            <!-- ================= PAGE: EXPERIENCE ================= -->
+            <div id="experience" class="page-view">
+                <section class="px-6 lg:px-16 py-12 lg:py-24 min-h-screen bg-stone-900 text-stone-100 flex flex-col justify-center">
+                    <div class="mb-16 reveal-mask block">
+                        <div class="reveal-child" style="animation-delay: 0.1s;">
+                            <h2 class="text-xs font-mono uppercase tracking-widest text-stone-400 mb-4">(03) Curriculum Vitae</h2>
+                            <h3 class="text-5xl md:text-6xl font-serif font-bold">Experience & Education.</h3>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        
+                        <!-- Experience Column -->
+                        <div class="reveal-mask block">
+                            <div class="reveal-child" style="animation-delay: 0.2s;">
+                                <h4 class="text-2xl font-serif italic border-b border-stone-700 pb-4 mb-8 text-accent">Experience</h4>
+                                
+                                <div class="mb-12 group hover:-translate-y-1 transition-transform duration-300">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                        <h5 class="text-xl font-bold group-hover:text-accent transition-colors duration-300">Business Analytics Intern</h5>
+                                        <span class="font-sans text-sm text-stone-300 mt-1 sm:mt-0 font-medium tracking-wide">Jan 2026 — Feb 2026</span>
+                                    </div>
+                                    <p class="text-lg font-serif italic text-stone-400 mb-4">Zoople Technologies, Ernakulam</p>
+                                    <p class="text-base font-sans text-stone-300 leading-relaxed max-w-lg">
+                                        Applied theoretical knowledge to practical scenarios, engaging in data manipulation, visualization, and business requirement analysis to support real-world data objectives.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Column -->
+                        <div class="reveal-mask block">
+                            <div class="reveal-child" style="animation-delay: 0.3s;">
+                                <h4 class="text-2xl font-serif italic border-b border-stone-700 pb-4 mb-8 text-accent">Education</h4>
+                                
+                                <div class="mb-10 group hover:-translate-y-1 transition-transform duration-300">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                        <h5 class="text-xl font-bold group-hover:text-accent transition-colors duration-300">Certificate in Business Analytics</h5>
+                                        <span class="font-sans text-sm text-stone-300 mt-1 sm:mt-0 font-medium tracking-wide">Sep 2025 — Jan 2026</span>
+                                    </div>
+                                    <p class="text-lg font-serif italic text-stone-400 mb-3">Zoople Technologies</p>
+                                    <p class="text-sm font-sans text-stone-300 uppercase leading-snug tracking-wider">Data Analytics • Python • SQL • Power BI • AWS • Machine Learning • Business Analysis</p>
+                                </div>
+
+                                <div class="mb-10 group hover:-translate-y-1 transition-transform duration-300">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                        <h5 class="text-xl font-bold group-hover:text-accent transition-colors duration-300">Bachelor of Commerce (B.Com)</h5>
+                                        <span class="font-sans text-sm text-stone-300 mt-1 sm:mt-0 font-medium tracking-wide">Jun 2022 — Mar 2025</span>
+                                    </div>
+                                    <p class="text-lg font-serif italic text-stone-400 mb-2">Sree Narayana Arts & Science College, Kottayam</p>
+                                    <p class="text-sm font-sans text-stone-300 uppercase tracking-wider">Computer Application • MG University</p>
+                                </div>
+
+                                <div class="group hover:-translate-y-1 transition-transform duration-300">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                        <h5 class="text-xl font-bold group-hover:text-accent transition-colors duration-300">Diploma in Computerized Fin. Accounting</h5>
+                                        <span class="font-sans text-sm text-stone-300 mt-1 sm:mt-0 font-medium tracking-wide">Jul 2022 — Feb 2023</span>
+                                    </div>
+                                    <p class="text-lg font-serif italic text-stone-400">ICM Computers</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <footer class="p-6 brutal-border-t flex flex-col sm:flex-row justify-between items-center bg-stone-900 text-stone-400 font-mono text-xs uppercase tracking-widest border-t border-stone-700">
+                    <p>&copy; 2026 Ashindh Anil.</p>
+                </footer>
+            </div>
+
+            <!-- ================= PAGE: CONTACT ================= -->
+            <div id="contact" class="page-view">
+                <section class="px-6 lg:px-16 py-12 lg:py-24 min-h-screen bg-accent text-stone-900 flex flex-col justify-center">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div class="reveal-mask block">
+                            <div class="reveal-child" style="animation-delay: 0.1s;">
+                                <h2 class="text-xs font-mono uppercase tracking-widest text-stone-900 mb-4">(04) Connect</h2>
+                                <h3 class="text-5xl lg:text-7xl font-serif font-bold leading-none mb-8">Let's build<br>something<br>data-driven.</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col gap-6 reveal-mask block">
+                            <div class="reveal-child flex flex-col gap-6" style="animation-delay: 0.2s;">
+                                <a href="mailto:ashindhanil.contact@gmail.com" class="flex justify-between items-center pb-4 border-b border-stone-900 hover:pl-4 transition-all duration-300 group">
+                                    <span class="text-xl sm:text-2xl font-serif">Email</span>
+                                    <span class="font-mono text-sm group-hover:font-bold transition-all break-all text-right">ashindhanil.contact@gmail.com</span>
+                                </a>
+                                <a href="tel:+919497392291" class="flex justify-between items-center pb-4 border-b border-stone-900 hover:pl-4 transition-all duration-300 group">
+                                    <span class="text-xl sm:text-2xl font-serif">Phone</span>
+                                    <span class="font-mono text-sm group-hover:font-bold transition-all">+91 94973 92291</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/ashindhanil/" target="_blank" class="flex justify-between items-center pb-4 border-b border-stone-900 hover:pl-4 transition-all duration-300">
+                                    <span class="text-xl sm:text-2xl font-serif">LinkedIn</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="https://github.com/ashindh" target="_blank" class="flex justify-between items-center pb-4 border-b border-stone-900 hover:pl-4 transition-all duration-300">
+                                    <span class="text-xl sm:text-2xl font-serif">GitHub</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class="p-6 flex flex-col sm:flex-row justify-between items-center bg-stone-900 text-stone-400 font-mono text-xs uppercase tracking-widest">
+                    <p>&copy; 2026 Ashindh Anil. All Rights Reserved.</p>
+                    <p class="mt-2 sm:mt-0">Based in Kottayam, Kerala.</p>
+                </footer>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Project Details Overlay (Slide-in from right) -->
+    <div id="project-overlay" class="fixed inset-0 bg-stone-900/80 backdrop-blur-sm z-[100] hidden flex justify-end transition-opacity duration-300">
+        <div id="project-panel" class="bg-stone-100 w-full md:w-2/3 lg:w-1/2 h-full brutal-border-l transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col overflow-hidden">
+            
+            <div class="p-6 brutal-border-b flex justify-between items-center bg-stone-100 shrink-0">
+                <span class="font-mono text-sm uppercase tracking-widest font-bold" id="panel-tag">Tag</span>
+                <button onclick="closeProject()" class="w-10 h-10 border border-stone-900 rounded-full flex items-center justify-center hover:bg-stone-900 hover:text-white transition-all duration-300 hover:rotate-90">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="p-8 md:p-12 overflow-y-auto flex-1 scroll-smooth">
+                <h2 id="panel-title" class="text-3xl md:text-5xl font-serif font-bold text-stone-900 mb-8 leading-tight">Title</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 border-y border-stone-300 py-8 mb-8" id="panel-metrics">
+                    <!-- Metrics generated by JS -->
+                </div>
+
+                <div class="mb-10">
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-stone-500 mb-4 font-bold">Project Overview</h3>
+                    <p id="panel-desc" class="text-lg md:text-xl font-light text-stone-800 leading-relaxed"></p>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-mono uppercase tracking-widest text-stone-500 mb-4 font-bold">Tech Stack</h3>
+                    <div id="panel-stack" class="flex flex-wrap gap-2 font-mono text-sm">
+                        <!-- Stack generated by JS -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 brutal-border-t bg-stone-200 shrink-0">
+                <a href="https://github.com/ashindh" target="_blank" id="panel-link" class="flex justify-between items-center font-serif text-2xl group text-stone-900 hover:text-accent transition-colors">
+                    <span>View Repository</span>
+                    <i class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Bottom Dock Navigation -->
-    <nav class="dock-container">
-        <!-- Home -->
-        <button onclick="navigateTo('home')" class="dock-item active" id="nav-home">
-            <i class="fas fa-house text-lg md:text-xl"></i>
-            <span class="dock-tooltip">Home</span>
-        </button>
-
-        <!-- Profile -->
-        <button onclick="navigateTo('about')" class="dock-item" id="nav-about">
-            <i class="fas fa-user text-lg md:text-xl"></i>
-            <span class="dock-tooltip">Profile</span>
-        </button>
-
-        <!-- Skills -->
-        <button onclick="navigateTo('skills')" class="dock-item" id="nav-skills">
-            <i class="fas fa-layer-group text-lg md:text-xl"></i>
-            <span class="dock-tooltip">Proficiency</span>
-        </button>
-        
-        <!-- Projects -->
-        <button onclick="navigateTo('projects')" class="dock-item" id="nav-projects">
-            <i class="fas fa-folder-open text-lg md:text-xl"></i>
-            <span class="dock-tooltip">Projects</span>
-        </button>
-
-        <!-- Contact -->
-        <button onclick="navigateTo('contact')" class="dock-item" id="nav-contact">
-            <i class="fas fa-paper-plane text-lg md:text-xl"></i>
-            <span class="dock-tooltip">Contact</span>
-        </button>
-    </nav>
-
-    <!-- Main Content Container -->
-    <main id="main-content" class="min-h-screen relative z-10 pt-8 sm:pt-16">
-        
-        <!-- ================= HOME SECTION ================= -->
-        <section id="home" class="view-section active min-h-[90vh] flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
-            
-            <!-- 8. Staggered Entrance (Refined delays) -->
-            <div class="relative z-10 max-w-5xl mx-auto space-y-6 sm:space-y-8 flex flex-col items-center">
-                
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md animate-fade-in-up hover:bg-white/10 transition-colors cursor-default" style="animation-delay: 0.1s;">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span class="text-xs font-medium text-gray-300 tracking-wider uppercase">Available for Hire</span>
-                </div>
-
-                <!-- Main Name (Gradient Effect Removed - Solid White) -->
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white animate-fade-in-up leading-[1.1] pb-2 cursor-default" style="animation-delay: 0.2s;">
-                    Ashindh Anil
-                </h1>
-
-                <!-- Role / Title (Gradient - Blue/Purple) -->
-                <h2 class="text-xl md:text-3xl font-medium tracking-wide animate-fade-in-up" style="animation-delay: 0.3s;">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-300% animate-gradient-x">Data Analyst | Business Analytics Specialist</span>
-                </h2>
-
-                <!-- Refined Description (From Resume) -->
-                <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-normal leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s;">
-                    Bridging the gap between <span class="text-white font-medium">Financial Domain Knowledge</span> and <span class="text-white font-medium">Technical Data Solutions</span>. Proficient in transforming complex datasets into actionable insights using Python, SQL, and Power BI.
-                </p>
-
-                <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center mt-8 animate-fade-in-up" style="animation-delay: 0.5s;">
-                    <button onclick="navigateTo('projects')" class="w-full sm:w-auto group relative px-8 py-3.5 rounded-full bg-white text-black text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                        View Projects
-                        <span class="absolute inset-0 rounded-full ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></span>
-                    </button>
-                    <button onclick="navigateTo('contact')" class="w-full sm:w-auto px-8 py-3.5 rounded-full glass-panel hover:bg-white/10 text-white text-lg font-medium transition-all duration-300 hover:scale-105">
-                        Contact Me <i class="fas fa-chevron-right text-xs ml-2 opacity-70"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-28 left-1/2 -translate-x-1/2 animate-float opacity-30 hover:opacity-100 transition-opacity duration-300 cursor-pointer" onclick="navigateTo('about')" style="animation-delay: 1s;">
-                <i class="fas fa-chevron-down text-2xl"></i>
-            </div>
-        </section>
-
-        <!-- ================= ABOUT / PROFILE SECTION ================= -->
-        <section id="about" class="view-section px-4 py-12 md:py-20">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-6xl font-bold mb-4">Professional <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-300% animate-gradient-x">Profile.</span></h2>
-                    <p class="text-xl text-apple-text-gray">Financial Domain Knowledge meets Technical Expertise.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                    <!-- Summary Card (Large) -->
-                    <div class="md:col-span-12 lg:col-span-8 glass-panel rounded-3xl p-6 sm:p-8 bento-card">
-                        <h3 class="text-2xl font-bold mb-4 text-white">About Me</h3>
-                        <p class="text-base sm:text-lg text-gray-400 leading-relaxed">
-                            I am a Data Analyst and Business Analytics Specialist with a B.Com background. I specialize in transforming complex datasets into actionable insights using Python, SQL, and Power BI. My expertise spans Statistical Analysis, Predictive Modeling, and Stakeholder Management.
-                        </p>
-                        <p class="text-base sm:text-lg text-gray-400 leading-relaxed mt-4">
-                            Passionate about leveraging Business Intelligence (BI) to optimize growth, I am experienced in Requirement Gathering and Agile Methodologies. I am eager to apply my skills to drive data-driven decision-making in dynamic environments.
-                        </p>
-                    </div>
-
-                    <!-- Location Card (Small) -->
-                    <div class="md:col-span-12 lg:col-span-4 glass-panel rounded-3xl p-6 sm:p-8 bento-card flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div>
-                            <span class="text-sm font-medium text-apple-text-gray uppercase tracking-wider">Kottayam, Kerala, India</span>
-                            <h3 class="text-2xl sm:text-3xl font-bold text-white mt-2">Open to Work</h3>
-                            <p class="text-apple-text-gray mt-1">Remote & Relocation Ready</p>
-                            <div class="mt-4 flex gap-2 flex-wrap">
-                                <span class="px-2 py-1 bg-white/10 rounded text-xs text-gray-300">English</span>
-                                <span class="px-2 py-1 bg-white/10 rounded text-xs text-gray-300">Malayalam</span>
-                                <span class="px-2 py-1 bg-white/10 rounded text-xs text-gray-300">Hindi</span>
-                            </div>
-                        </div>
-                        <div class="mt-8 self-end">
-                           <i class="fas fa-earth-americas text-6xl text-white/10 group-hover:text-blue-500/50 transition-colors duration-500"></i>
-                        </div>
-                    </div>
-
-                    <!-- Education Timeline (Full Width) -->
-                    <div class="md:col-span-12 glass-panel rounded-3xl p-6 sm:p-8 md:p-12 bento-card mt-4">
-                        <h3 class="text-2xl font-bold mb-10 text-white">Education</h3>
-                        
-                        <div class="relative pl-4 sm:pl-10">
-                            <!-- Edu Item 1 -->
-                            <div class="timeline-item relative pb-12 pl-8 border-l-2 border-gray-800">
-                                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 animate-pulse-glow border-2 border-black"></div>
-                                <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-blue-500 uppercase bg-blue-500/10 rounded-full">July 2025 - Jan 2026</span>
-                                <h4 class="text-xl md:text-2xl font-bold text-white">Certificate in Business Analytics</h4>
-                                <p class="text-lg text-apple-text-gray mt-1">Zoople Technologies, Ernakulam</p>
-                                <p class="text-sm text-gray-500 mt-2 leading-relaxed">Comprehensive training in Data Analytics, Python, SQL, Power BI, AWS, Machine Learning, and Business Analysis Methodologies.</p>
-                            </div>
-
-                            <!-- Edu Item 2 -->
-                            <div class="timeline-item relative pb-12 pl-8 border-l-2 border-gray-800">
-                                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-600 border-2 border-black group-hover:bg-blue-500 transition-colors"></div>
-                                <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-gray-400 uppercase bg-gray-800 rounded-full">June 2022 - March 2025</span>
-                                <h4 class="text-xl md:text-2xl font-bold text-white">Bachelor of Commerce (B.Com)</h4>
-                                <p class="text-lg text-apple-text-gray mt-1">Sree Narayana Arts & Science College, Kumarakom</p>
-                                <p class="text-sm text-gray-500 mt-1">Mahatma Gandhi University (MG University)</p>
-                            </div>
-
-                            <!-- Edu Item 3 -->
-                            <div class="timeline-item relative pb-4 pl-8 border-l-2 border-transparent">
-                                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-600 border-2 border-black"></div>
-                                <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-gray-400 uppercase bg-gray-800 rounded-full">July 2022 - Feb 2023</span>
-                                <h4 class="text-xl md:text-2xl font-bold text-white">Professional Diploma in Computerized Financial Accounting</h4>
-                                <p class="text-lg text-apple-text-gray mt-1">ICM Computers, Thalayolaparambu</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PROJECTS SECTION ================= -->
-        <section id="projects" class="view-section px-4 py-12 md:py-20">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-6xl font-bold mb-4">Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-300% animate-gradient-x">Projects.</span></h2>
-                    <p class="text-xl text-apple-text-gray">Bridging Finance and Data Science.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project 1: Spotify Churn Analysis -->
-                     <div onclick="openProjectModal('spotify')" class="glass-panel rounded-3xl overflow-hidden bento-card group flex flex-col h-full hover:border-white/20 transition-all duration-500 cursor-pointer">
-                        <div class="h-56 bg-gradient-to-br from-green-900/20 via-[#101010] to-green-500/10 relative overflow-hidden group-hover:from-green-900/40 transition-all duration-500">
-                            <div class="absolute inset-0 flex items-center justify-center opacity-80">
-                                <i class="fab fa-spotify text-7xl text-green-500/40 group-hover:text-green-400 group-hover:scale-110 transition-all duration-500 filter drop-shadow-[0_0_15px_rgba(34,197,94,0.3)]"></i>
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#161617] to-transparent"></div>
-                        </div>
-                        <div class="p-8 flex-1 flex flex-col relative -mt-12">
-                            <div class="w-12 h-12 rounded-2xl bg-green-600 flex items-center justify-center mb-6 shadow-lg shadow-green-900/50 group-hover:translate-y-[-5px] transition-transform duration-300">
-                                <i class="fas fa-music text-white text-xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">Spotify User Retention</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
-                                Developed a dashboard analyzing 8,000 users. Visualized a 25.89% churn rate and 2.57 hr avg daily listening time.
-                            </p>
-                            <!-- 38. Tech Stack Pills -->
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="px-3 py-1 text-xs font-semibold bg-green-500/10 text-green-400 rounded-full border border-green-500/20">Power BI</span>
-                                <span class="px-3 py-1 text-xs font-semibold bg-gray-700/30 text-gray-300 rounded-full border border-gray-600/30">EDA</span>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/5 flex items-center text-sm text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: Lung Cancer Prediction -->
-                    <div onclick="openProjectModal('lungCancer')" class="glass-panel rounded-3xl overflow-hidden bento-card group flex flex-col h-full hover:border-white/20 transition-all duration-500 cursor-pointer">
-                        <div class="h-56 bg-gradient-to-br from-red-900/20 via-[#101010] to-orange-500/10 relative overflow-hidden group-hover:from-red-900/40 transition-all duration-500">
-                            <div class="absolute inset-0 flex items-center justify-center opacity-80">
-                                <i class="fas fa-lungs text-7xl text-red-500/40 group-hover:text-red-400 group-hover:scale-110 transition-all duration-500 filter drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]"></i>
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#161617] to-transparent"></div>
-                        </div>
-                        <div class="p-8 flex-1 flex flex-col relative -mt-12">
-                            <div class="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center mb-6 shadow-lg shadow-red-900/50 group-hover:translate-y-[-5px] transition-transform duration-300">
-                                <i class="fas fa-heart-pulse text-white text-xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">Lung Cancer Prediction</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
-                                Built a predictive system using Logistic Regression & Random Forest. Processed 15 health features with MinMax scaling, achieving 97% accuracy.
-                            </p>
-                            <!-- 38. Tech Stack Pills -->
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="px-3 py-1 text-xs font-semibold bg-red-500/10 text-red-400 rounded-full border border-red-500/20">Scikit-Learn</span>
-                                <span class="px-3 py-1 text-xs font-semibold bg-gray-700/30 text-gray-300 rounded-full border border-gray-600/30">Pandas</span>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/5 flex items-center text-sm text-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                View Details <i class="fas fa-arrow-right ml-2"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ================= SKILLS SECTION ================= -->
-        <section id="skills" class="view-section px-4 py-12 md:py-20">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-6xl font-bold mb-4">Technical <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-300% animate-gradient-x">Proficiency.</span></h2>
-                    <p class="text-xl text-apple-text-gray">Tools that drive insights.</p>
-                </div>
-
-                <!-- Bento Grid for Skills -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[160px] sm:auto-rows-[180px]">
-                    
-                    <!-- 4. Soft Skills (Reverted to Pills) - Matches Resume -->
-                    <div class="col-span-2 md:col-span-2 row-span-1 glass-panel rounded-3xl p-6 bento-card flex flex-col justify-between group">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Professional Competencies</h3>
-                                <p class="text-xs text-gray-400 mt-1">Soft Skills Overview</p>
-                            </div>
-                            <i class="fas fa-brain text-2xl text-blue-400 group-hover:text-blue-300 transition-colors"></i>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-medium border border-blue-500/20">Analytical Thinking</span>
-                            <span class="px-3 py-1.5 bg-green-500/10 text-green-300 rounded-full text-xs font-medium border border-green-500/20">Problem Solving</span>
-                            <span class="px-3 py-1.5 bg-purple-500/10 text-purple-300 rounded-full text-xs font-medium border border-purple-500/20">Team Collaboration</span>
-                            <span class="px-3 py-1.5 bg-yellow-500/10 text-yellow-300 rounded-full text-xs font-medium border border-yellow-500/20">Time Management</span>
-                            <span class="px-3 py-1.5 bg-pink-500/10 text-pink-300 rounded-full text-xs font-medium border border-pink-500/20">Detail-Oriented</span>
-                        </div>
-                    </div>
-
-                    <!-- Python (Large Square) -->
-                    <div class="col-span-2 row-span-2 glass-panel rounded-3xl p-6 sm:p-8 bento-card flex flex-col justify-between group">
-                        <i class="fab fa-python text-6xl md:text-8xl text-yellow-500/20 group-hover:text-yellow-500 transition-colors duration-500 self-end"></i>
-                        <div>
-                            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2">Python</h3>
-                            <p class="text-sm sm:text-base text-apple-text-gray">Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn. Building predictive models and automating analysis.</p>
-                        </div>
-                    </div>
-
-                    <!-- Power BI -->
-                    <div class="col-span-2 md:col-span-1 row-span-1 glass-panel rounded-3xl p-4 sm:p-6 bento-card flex flex-col justify-between group">
-                        <i class="fas fa-chart-bar text-3xl sm:text-4xl text-yellow-600/50 group-hover:text-yellow-500 transition-colors"></i>
-                        <h3 class="text-lg sm:text-xl font-semibold text-white">Power BI (DAX)</h3>
-                    </div>
-
-                    <!-- SQL -->
-                    <div class="col-span-2 md:col-span-1 row-span-1 glass-panel rounded-3xl p-4 sm:p-6 bento-card flex flex-col justify-between group">
-                        <i class="fas fa-database text-3xl sm:text-4xl text-blue-400/50 group-hover:text-blue-400 transition-colors"></i>
-                        <h3 class="text-lg sm:text-xl font-semibold text-white">SQL (MySQL)</h3>
-                    </div>
-
-                    <!-- Tableau (New) -->
-                    <div class="col-span-2 md:col-span-1 row-span-1 glass-panel rounded-3xl p-4 sm:p-6 bento-card flex flex-col justify-between group">
-                        <i class="fas fa-chart-pie text-3xl sm:text-4xl text-orange-500/50 group-hover:text-orange-500 transition-colors"></i>
-                        <h3 class="text-lg sm:text-xl font-semibold text-white">Tableau</h3>
-                    </div>
-
-                    <!-- R Programming & Stats (Updated) -->
-                     <div class="col-span-2 md:col-span-1 row-span-1 glass-panel rounded-3xl p-4 sm:p-6 bento-card flex flex-col justify-between group">
-                        <span class="text-3xl sm:text-4xl font-bold text-blue-300/50 group-hover:text-blue-300 transition-colors">R & Stats</span>
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">R Language</h3>
-                            <p class="text-xs text-gray-400">Hypothesis Testing, ANOVA</p>
-                        </div>
-                    </div>
-
-                    <!-- Business Analysis (New) -->
-                    <div class="col-span-2 md:col-span-2 row-span-1 glass-panel rounded-3xl p-6 bento-card flex flex-col justify-between group">
-                        <div class="flex justify-between items-start">
-                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-white">Business Analysis</h3>
-                                <p class="text-apple-text-gray text-xs sm:text-sm mt-1">Methodologies & Tools</p>
-                             </div>
-                             <i class="fas fa-briefcase text-2xl sm:text-3xl text-purple-500 group-hover:text-white transition-colors"></i>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-3">
-                            <span class="px-3 py-1.5 bg-purple-500/10 text-purple-300 rounded-full text-xs font-medium border border-purple-500/20">Agile</span>
-                            <span class="px-3 py-1.5 bg-fuchsia-500/10 text-fuchsia-300 rounded-full text-xs font-medium border border-fuchsia-500/20">Waterfall</span>
-                            <span class="px-3 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-medium border border-indigo-500/20">Miro</span>
-                            <span class="px-3 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-medium border border-violet-500/20">User Stories</span>
-                        </div>
-                    </div>
-
-                    <!-- AWS (Updated) -->
-                    <div class="col-span-2 md:col-span-1 row-span-1 glass-panel rounded-3xl p-6 bento-card flex flex-col justify-between group relative overflow-hidden">
-                        <div class="z-10">
-                            <h3 class="text-lg sm:text-xl font-bold text-white">AWS Cloud</h3>
-                            <p class="text-apple-text-gray text-xs mt-1">Glue, Athena, Kinesis</p>
-                        </div>
-                        <i class="fab fa-aws text-4xl sm:text-5xl text-white/10 group-hover:text-orange-500/80 transition-colors z-10 self-end"></i>
-                    </div>
-
-                    <!-- Advanced Excel (Dedicated Card) -->
-                     <div class="col-span-2 md:col-span-1 row-span-1 glass-panel rounded-3xl p-4 sm:p-6 bento-card flex flex-col justify-between group">
-                        <i class="fas fa-file-excel text-3xl sm:text-4xl text-green-500/50 group-hover:text-green-500 transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg sm:text-xl font-semibold text-white">Advanced Excel</h3>
-                            <p class="text-xs text-gray-400">Macros, Pivot Tables, VLOOKUP</p>
-                        </div>
-                    </div>
-
-                    <!-- Microsoft Office (Separate Card) -->
-                     <div class="col-span-2 md:col-span-1 row-span-1 glass-panel rounded-3xl p-4 sm:p-6 bento-card flex flex-col justify-between group">
-                        <i class="fab fa-microsoft text-3xl sm:text-4xl text-blue-400/50 group-hover:text-blue-400 transition-colors"></i>
-                        <div>
-                            <h3 class="text-lg sm:text-xl font-semibold text-white">Microsoft Office</h3>
-                            <p class="text-xs text-gray-400">Word, PowerPoint, Outlook</p>
-                        </div>
-                    </div>
-
-                    <!-- Accounting & Tech (Updated) -->
-                    <div class="col-span-2 md:col-span-2 row-span-1 glass-panel rounded-3xl p-6 bento-card flex flex-col justify-between group">
-                        <div class="flex justify-between items-start">
-                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-white">Accounting Tools</h3>
-                                <p class="text-apple-text-gray text-xs sm:text-sm mt-1">Financial Software</p>
-                             </div>
-                             <i class="fas fa-calculator text-2xl sm:text-3xl text-gray-500 group-hover:text-white transition-colors"></i>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-3">
-                            <span class="px-3 py-1.5 bg-emerald-500/10 text-emerald-300 rounded-full text-xs font-medium border border-emerald-500/20">Tally</span>
-                            <span class="px-3 py-1.5 bg-green-500/10 text-green-300 rounded-full text-xs font-medium border border-green-500/20">QuickBooks</span>
-                            <span class="px-3 py-1.5 bg-teal-500/10 text-teal-300 rounded-full text-xs font-medium border border-teal-500/20">Peachtree</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= CONTACT SECTION ================= -->
-        <section id="contact" class="view-section px-4 py-12 md:py-20 min-h-screen flex items-center">
-            <div class="max-w-3xl mx-auto w-full">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-6xl font-bold mb-4">Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-300% animate-gradient-x">Connect.</span></h2>
-                    <p class="text-xl text-apple-text-gray">Open for data analytics opportunities.</p>
-                </div>
-
-                <div class="glass-panel rounded-[30px] sm:rounded-[40px] p-6 sm:p-12 border border-white/10 relative overflow-hidden">
-                    <!-- Decor Glow -->
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] pointer-events-none"></div>
-
-                    <div class="space-y-4 relative z-10">
-                        
-                        <!-- 17. Email Card with Copy to Clipboard Function -->
-                        <div onclick="handleEmailClick(event)" class="cursor-pointer group interactable">
-                            <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center justify-between p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-                                <div class="text-center md:text-left">
-                                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Email</h3>
-                                    <p id="email-text" class="text-lg sm:text-xl md:text-2xl font-light text-white group-hover:text-blue-400 transition-colors break-all">ashindhanil.contact@gmail.com</p>
-                                </div>
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300 shadow-lg group-hover:shadow-blue-900/50">
-                                    <i class="fas fa-copy text-white text-lg sm:text-xl"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Phone Card -->
-                        <a href="tel:+919497392291" class="block group interactable">
-                            <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center justify-between p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-green-500/30 transition-all duration-300">
-                                <div class="text-center md:text-left">
-                                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Phone</h3>
-                                    <p class="text-lg sm:text-xl md:text-2xl font-light text-white group-hover:text-green-400 transition-colors">+91 94973 92291</p>
-                                </div>
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-green-600 transition-colors duration-300 shadow-lg group-hover:shadow-green-900/50">
-                                    <i class="fas fa-phone text-white text-lg sm:text-xl"></i>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- LinkedIn Card -->
-                        <a href="https://www.linkedin.com/in/ashindhanil/" target="_blank" class="block group interactable">
-                            <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center justify-between p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-[#0077b5]/30 transition-all duration-300">
-                                <div class="text-center md:text-left">
-                                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">LinkedIn</h3>
-                                    <p class="text-lg sm:text-xl md:text-2xl font-light text-white group-hover:text-[#0077b5] transition-colors">Connect on LinkedIn</p>
-                                </div>
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-[#0077b5] transition-colors duration-300 shadow-lg group-hover:shadow-blue-900/50">
-                                    <i class="fab fa-linkedin-in text-white text-lg sm:text-xl"></i>
-                                </div>
-                            </div>
-                        </a>
-
-                        <!-- GitHub Card -->
-                        <a href="https://github.com/ashindh" target="_blank" class="block group interactable">
-                            <div class="flex flex-col md:flex-row gap-4 sm:gap-6 items-center justify-between p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-gray-500/30 transition-all duration-300">
-                                <div class="text-center md:text-left">
-                                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">GitHub</h3>
-                                    <p class="text-lg sm:text-xl md:text-2xl font-light text-white group-hover:text-gray-300 transition-colors">View Repositories</p>
-                                </div>
-                                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-300 shadow-lg group-hover:shadow-white/20">
-                                    <i class="fab fa-github text-white text-lg sm:text-xl group-hover:text-black"></i>
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-                
-                <footer class="mt-20 text-center text-apple-text-gray text-sm pb-10">
-                    <p>&copy; 2026 Ashindh Anil. All rights reserved.</p>
-                </footer>
-            </div>
-        </section>
-
-    </main>
-
     <script>
-        // === SPA Navigation Logic ===
-        const sectionOrder = ['home', 'about', 'skills', 'projects', 'contact'];
-        
-        function navigateTo(sectionId) {
-            // Update nav active state
-            document.querySelectorAll('.dock-item').forEach(el => el.classList.remove('active'));
-            const navBtn = document.getElementById('nav-' + sectionId);
-            if (navBtn) navBtn.classList.add('active');
-
-            // Hide all sections
-            const sections = document.querySelectorAll('.view-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-                section.style.opacity = '0';
-                setTimeout(() => {
-                    if(!section.classList.contains('active')) {
-                        section.style.display = 'none';
-                    }
-                }, 500); 
+        // --- SPA Navigation Logic with Robust Animations ---
+        function switchPage(pageId) {
+            // 1. Remove active state from all pages (this hides them and resets animation)
+            document.querySelectorAll('.page-view').forEach(page => {
+                page.classList.remove('active-page');
             });
-
-            // Show target section
-            const target = document.getElementById(sectionId);
-            if (target) {
-                target.style.display = 'block'; 
-                void target.offsetWidth; // Trigger reflow
-                target.classList.add('active'); 
-                target.style.opacity = '1';
-            }
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // === 25. Swipe Gestures ===
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        const mainContent = document.getElementById('main-content');
-        
-        mainContent.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, {passive: true});
-
-        mainContent.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, {passive: true});
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            // Get current active section
-            const currentSection = sectionOrder.find(id => document.getElementById(id).classList.contains('active'));
-            const currentIndex = sectionOrder.indexOf(currentSection);
-
-            if (touchEndX < touchStartX - swipeThreshold) {
-                // Swipe Left -> Next Section
-                if (currentIndex < sectionOrder.length - 1) {
-                    navigateTo(sectionOrder[currentIndex + 1]);
-                }
-            }
-            if (touchEndX > touchStartX + swipeThreshold) {
-                // Swipe Right -> Prev Section
-                if (currentIndex > 0) {
-                    navigateTo(sectionOrder[currentIndex - 1]);
-                }
-            }
-        }
-
-        // === 17. Click-to-Copy Email Logic ===
-        function handleEmailClick(e) {
-            const email = "ashindhanil.contact@gmail.com";
             
-            try {
-                // Legacy fallback for iframe/restricted environments
-                const tempInput = document.createElement("textarea");
-                tempInput.value = email;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand("copy");
-                document.body.removeChild(tempInput);
-
-                // Show Toast
-                const toast = document.getElementById('toast');
-                toast.classList.add('show');
-                setTimeout(() => { toast.classList.remove('show'); }, 3000);
+            // 2. Remove active state from nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active-nav');
+            });
+            
+            // 3. Find and activate target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                // Force browser reflow to guarantee CSS animation restart
+                void targetPage.offsetWidth; 
                 
-                // Optional: Open Mailto after delay
-                setTimeout(() => {
-                    window.location.href = `mailto:${email}`;
-                }, 1000);
-            } catch (err) {
-                console.error('Failed to copy: ', err);
-                window.location.href = `mailto:${email}`; // Fallback
-            }
-        }
-        
-        // === 6. Interactive Particles Effect ===
-        function initParticles() {
-            const canvas = document.getElementById('particles-canvas');
-            const ctx = canvas.getContext('2d');
-            let width, height, particles;
-            
-            // Mouse state for particles
-            let mouse = { x: null, y: null, radius: 150 };
-
-            window.addEventListener('mousemove', (e) => {
-                mouse.x = e.x;
-                mouse.y = e.y;
-            });
-            
-            // Reset mouse on leave so particles don't bunch up
-            window.addEventListener('mouseout', () => {
-                mouse.x = undefined;
-                mouse.y = undefined;
-            });
-
-            function resize() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            }
-
-            function createParticles() {
-                particles = [];
-                // Increased density: Lower number = More particles (was 10000)
-                const numParticles = Math.floor(width * height / 5000); 
-                for (let i = 0; i < numParticles; i++) {
-                    particles.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        vx: (Math.random() - 0.5) * 0.5,
-                        vy: (Math.random() - 0.5) * 0.5,
-                        size: Math.random() * 2,
-                        color: 'rgba(41, 151, 255, ' + (Math.random() * 0.5 + 0.2) + ')' // Blue tint
-                    });
-                }
-            }
-
-            function draw() {
-                ctx.clearRect(0, 0, width, height);
+                // Add class to trigger entrance animation and reveal-child animations
+                targetPage.classList.add('active-page');
                 
-                for (let i = 0; i < particles.length; i++) {
-                    let p = particles[i];
-                    
-                    // Move
-                    p.x += p.vx;
-                    p.y += p.vy;
-
-                    // Bounce edges
-                    if (p.x < 0 || p.x > width) p.vx *= -1;
-                    if (p.y < 0 || p.y > height) p.vy *= -1;
-
-                    // Mouse Interaction (Repulsion)
-                    if (mouse.x != undefined) {
-                        let dx = mouse.x - p.x;
-                        let dy = mouse.y - p.y;
-                        let distance = Math.sqrt(dx*dx + dy*dy);
-                        
-                        if (distance < mouse.radius) {
-                            // Push particles away slightly
-                            const forceDirectionX = dx / distance;
-                            const forceDirectionY = dy / distance;
-                            const force = (mouse.radius - distance) / mouse.radius;
-                            const directionX = forceDirectionX * force * 3; // Strength
-                            const directionY = forceDirectionY * force * 3;
-                            
-                            p.x -= directionX;
-                            p.y -= directionY;
-                        }
-                    }
-
-                    // Draw dots
-                    ctx.fillStyle = p.color;
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                    ctx.fill();
-
-                    // Connect close particles
-                    for (let j = i + 1; j < particles.length; j++) {
-                        let p2 = particles[j];
-                        let dx = p.x - p2.x;
-                        let dy = p.y - p2.y;
-                        let dist = Math.sqrt(dx*dx + dy*dy);
-                        
-                        if (dist < 100) {
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(41, 151, 255, ${0.1 - dist/1000})`; // Fade based on dist
-                            ctx.lineWidth = 0.5;
-                            ctx.moveTo(p.x, p.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            ctx.stroke();
-                        }
-                    }
-                    
-                    // Connect to Mouse
-                    if (mouse.x != undefined) {
-                        let dx = mouse.x - p.x;
-                        let dy = mouse.y - p.y;
-                        let dist = Math.sqrt(dx*dx + dy*dy);
-                        if (dist < 150) {
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 - dist/150})`; // Brighter connection to mouse
-                            ctx.lineWidth = 0.8;
-                            ctx.moveTo(p.x, p.y);
-                            ctx.lineTo(mouse.x, mouse.y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-                requestAnimationFrame(draw);
+                // Scroll the content area back to top smoothly
+                document.querySelector('.content-area').scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
-
-            window.addEventListener('resize', () => { resize(); createParticles(); });
-            resize();
-            createParticles();
-            draw();
+            
+            // 4. Update Nav UI
+            const navBtn = document.getElementById('nav-' + pageId);
+            if (navBtn) {
+                navBtn.classList.add('active-nav');
+            }
         }
-        
-        // === 6. Modal Logic (Updated with Centralized Data) ===
-        const projectsData = {
-            spotify: {
-                title: "Spotify User Retention",
-                date: "Dec 2025 - Jan 2026",
-                tag: "Data Visualization",
-                tagColor: "green",
-                description: "Developed a comprehensive dashboard analyzing 8,000 users to track global retention patterns. Segmented data by subscription tier and device type to identify high-risk churn factors such as ad frequency impact.",
+
+        // --- Mobile Menu Toggle ---
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // --- Project Data & Panel Logic ---
+        const projectData = {
+            grocery: {
+                title: "Grocery E-Commerce Digital Transformation",
+                tag: "Business Analysis",
+                desc: "Authored a System Requirements Specification (SRS) to digitize a supermarket, providing a roadmap for local expansion. Designed process flowcharts defining a 7km delivery radius and automated nearest-store routing to minimize costs. Documented use cases for recurring daily subscriptions and alternative payments to drive predictable revenue.",
                 metrics: [
-                    { label: "Churn Rate", value: "25.89%" },
-                    { label: "Users Analyzed", value: "8,000" },
-                    { label: "Avg Listening", value: "2.57 hrs" }
+                    { l: "Radius Strategy", v: "7km" },
+                    { l: "Routing", v: "Optimized" },
+                    { l: "Revenue Flow", v: "Predictable" }
                 ],
-                stack: ["Power BI", "EDA", "Data Visualization", "Market Analysis"],
-                link: "https://github.com/ashindh/spotify-churn-analysis"
+                stack: ["System Requirements (SRS)", "MS Office", "Process Flowcharts"],
             },
-            lungCancer: {
-                title: "Lung Cancer Prediction",
-                date: "Dec 2025 - Jan 2026",
-                tag: "Machine Learning",
-                tagColor: "red",
-                description: "Built a predictive system utilizing Logistic Regression and Random Forest algorithms to analyze patient survey data. Processed 15 health features using MinMax scaling and categorical encoding to support early medical screening.",
+            spotify: {
+                title: "Spotify User Retention Analysis",
+                tag: "Data Visualization",
+                desc: "Developed a comprehensive dashboard analyzing 8,000+ users to track global retention patterns. Identified a 25.89% churn rate and isolated high-risk segments to guide targeted retention marketing campaigns. Translated complex listening data into interactive Power BI dashboards, empowering data-driven product decisions.",
                 metrics: [
-                    { label: "Model Accuracy", value: "97%" },
-                    { label: "Features", value: "15" },
-                    { label: "Algorithms", value: "2" }
+                    { l: "Churn Rate", v: "25.89%" },
+                    { l: "Dataset Size", v: "8k Users" },
+                    { l: "Avg Listen Time", v: "2.5 hrs" }
                 ],
-                stack: ["Python", "Scikit-Learn", "Pandas", "Machine Learning"],
-                link: "https://github.com/ashindh/lung-cancer-prediction-ml"
+                stack: ["Power BI (DAX)", "Excel", "Data Visualization", "Strategic Reporting"],
+            },
+            lung: {
+                title: "Lung Cancer Prediction System",
+                tag: "Machine Learning",
+                desc: "Developed a predictive analytics model achieving 97% accuracy to support early clinical decision-making interventions. Engineered 15 critical clinical features, streamlining complex medical data to enhance diagnostic efficiency and demonstrated Machine Learning's commercial viability.",
+                metrics: [
+                    { l: "Model Accuracy", v: "97%" },
+                    { l: "Clinical Features", v: "15" },
+                    { l: "Algorithms Used", v: "2" }
+                ],
+                stack: ["Python", "Pandas", "NumPy", "Scikit-Learn"],
             }
         };
 
-        function openProjectModal(projectId) {
-            const data = projectsData[projectId];
-            if (!data) return;
+        const overlay = document.getElementById('project-overlay');
+        const panel = document.getElementById('project-panel');
 
-            const modal = document.getElementById('project-modal');
-            const mTitle = document.getElementById('modal-title');
-            const mDate = document.getElementById('modal-date');
-            const mTag = document.getElementById('modal-tag');
-            const mDesc = document.getElementById('modal-description');
-            const mMetrics = document.getElementById('modal-metrics');
-            const mStack = document.getElementById('modal-stack');
-            const mLink = document.getElementById('modal-link');
-            
-            mTitle.textContent = data.title;
-            mDate.textContent = data.date;
-            mDesc.textContent = data.description;
-            mLink.href = data.link;
-            
-            // Update Tag Style
-            mTag.textContent = data.tag;
-            const color = data.tagColor === 'red' ? 'red' : 'green'; // Simple toggle for now
-            // Reset classes (simplified for demo, ideally use classList logic)
-            if (data.tagColor === 'red') {
-                mTag.className = "px-3 py-1 bg-red-500/10 text-red-400 rounded-full text-xs font-medium uppercase tracking-wider border border-red-500/20";
-            } else {
-                mTag.className = "px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-xs font-medium uppercase tracking-wider border border-green-500/20";
-            }
+        function openProject(id) {
+            const data = projectData[id];
+            if(!data) return;
 
-            // Build Metrics Grid
-            mMetrics.innerHTML = '';
-            data.metrics.forEach(metric => {
-                const div = document.createElement('div');
-                div.className = "p-3 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center";
-                div.innerHTML = `
-                    <span class="text-2xl font-bold text-white">${metric.value}</span>
-                    <span class="text-[10px] uppercase tracking-wider text-gray-500 mt-1">${metric.label}</span>
-                `;
-                mMetrics.appendChild(div);
-            });
+            document.getElementById('panel-title').innerText = data.title;
+            document.getElementById('panel-tag').innerText = data.tag;
+            document.getElementById('panel-desc').innerText = data.desc;
             
-            // Build Stack
-            mStack.innerHTML = '';
-            data.stack.forEach(tech => {
-                const span = document.createElement('span');
-                span.className = "px-3 py-1 bg-white/10 rounded-full text-xs font-medium text-gray-300";
-                span.textContent = tech;
-                mStack.appendChild(span);
-            });
+            const metricsHTML = data.metrics.map(m => `
+                <div class="text-left sm:text-center">
+                    <div class="text-2xl lg:text-3xl font-serif font-bold text-stone-900">${m.v}</div>
+                    <div class="text-[10px] font-mono uppercase tracking-widest text-stone-500 mt-2 font-bold">${m.l}</div>
+                </div>
+            `).join('');
+            document.getElementById('panel-metrics').innerHTML = metricsHTML;
+
+            const stackHTML = data.stack.map(s => `
+                <span class="px-3 py-1.5 border border-stone-300 bg-stone-50 text-stone-700 hover:bg-stone-200 transition-colors cursor-default">${s}</span>
+            `).join('');
+            document.getElementById('panel-stack').innerHTML = stackHTML;
+
+            // Show overlay, then slide panel smoothly
+            overlay.classList.remove('hidden');
             
-            modal.classList.add('open');
-            document.body.style.overflow = 'hidden'; 
+            // tiny delay to ensure display:block applies before transform animation triggers
+            setTimeout(() => {
+                panel.classList.remove('translate-x-full');
+            }, 10);
         }
 
-        function closeModal(e) {
-            if (e && !e.target.id && !e.target.closest('#project-modal > button')) return; 
-            const modal = document.getElementById('project-modal');
-            modal.classList.remove('open');
-            document.body.style.overflow = ''; 
+        function closeProject() {
+            panel.classList.add('translate-x-full');
+            
+            // wait for animation to finish before hiding overlay
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 500); // matches duration-500 in class list
         }
 
-        // === Initial Load Animation ===
-        document.addEventListener('DOMContentLoaded', () => {
-            navigateTo('home');
-            initParticles();
-            
-            // Trigger Name Scramble Effect after a short delay
-            setTimeout(scrambleName, 800); 
+        // Close on clicking outside the panel
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) closeProject();
         });
 
-        // === Name Scramble/Decryption Effect ===
-        function scrambleName() {
-            // Functionality Removed as requested, placeholder kept to prevent errors if called
-        }
+        // Force initial animation trigger to prevent empty screen
+        document.addEventListener('DOMContentLoaded', () => {
+            const homePage = document.getElementById('home');
+            if(homePage) {
+                homePage.classList.remove('active-page');
+                setTimeout(() => {
+                    homePage.classList.add('active-page');
+                }, 50);
+            }
+        });
     </script>
 </body>
 </html>
-
